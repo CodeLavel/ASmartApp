@@ -112,7 +112,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   // hintText: 'กรุณากรอกรหัสพนักงาน 10 หลัก'
                                 ),
                                 maxLength: 7,
-                                // initialValue: '5601965',
+                                initialValue: '7777777',
                                 validator: (value){
                                   if(value.isEmpty){
                                     return 'กรุณากรอกรหัสพนักงานก่อน';
@@ -140,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   // hintText: 'กรุณากรอกบัตรประชาชน 13 หลัก'
                                 ),
                                 maxLength: 13,
-                                // initialValue: '7127225663620',
+                                initialValue: '3770400404433',
                                 validator: (value){
                                   if(value.isEmpty){
                                     return 'กรุณากรอกเลขบัตรประชาชนก่อน';
@@ -236,6 +236,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
         sharedPreferences.setString('storePrename', body['data']['prename']);
         sharedPreferences.setString('storeFirstname', body['data']['firstname']);
         sharedPreferences.setString('storeLastname', body['data']['lastname']);
+        sharedPreferences.setString('storePosition', body['data']['position']);
+        sharedPreferences.setString('storeAvatar', body['data']['avatar']);
         sharedPreferences.setInt('storeStep', 1);
         
         Navigator.pushNamed(context, '/consent');

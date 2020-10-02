@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "353753845137",
+    "firebase_url": "https://asmartapp-4bbf4.firebaseio.com",
+    "project_id": "asmartapp-4bbf4",
+    "storage_bucket": "asmartapp-4bbf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353753845137:android:19a57050731c0f2d661e30",
+        "android_client_info": {
+          "package_name": "co.th.itgenius.ASmartApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353753845137-00ghtv34jcpd0dupa4u55q9bkus8a372.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAIf_OKSS5elsEBTxbnfnw4HnWo5pgYUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353753845137-00ghtv34jcpd0dupa4u55q9bkus8a372.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
