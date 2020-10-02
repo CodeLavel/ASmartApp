@@ -17,7 +17,7 @@ Future<void> main() async{
   // SharedPreferences sharedPreferences = 
   // await SharedPreferences.getInstance();
 
-  initURL = '/welcome';
+  initURL = '/onboarding';
 
   runApp(MyApp());
 }
