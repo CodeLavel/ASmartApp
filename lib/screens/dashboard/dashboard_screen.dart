@@ -20,7 +20,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   SharedPreferences sharedPreferences;
 
   // สร้างตัวแปรไว้รับข้อมูลจาก SharedPreferences
-  String fullnameAccount, empIDAccount;
+  String fullnameAccount, empIDAccount, _avatar;
 
   // สร้างฟังก์ชันไว้ดึงข้อมูลตัวแปรแบบ sharedPreferences
   readEmployee() async {
@@ -30,6 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       fullnameAccount = sharedPreferences.getString('storePrename') + 
                       sharedPreferences.getString('storeFirstname') + " " +
                       sharedPreferences.getString('storeLastname');
+      _avatar = sharedPreferences.getString('storeAvatar');
     });
   }
 
@@ -80,13 +81,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget _checkInActionBar(){
-    return RaisedButton(
+    return FlatButton(
       onPressed: (){},
-      child: Text(
-        'ลงเวลาทำงาน', 
-        style: TextStyle(color: Colors.white),
+      child: Row(
+        children: [
+          Icon(Icons.timelapse, color: Colors.white,),
+          Text(
+            ' ลงเวลาทำงาน', 
+            style: TextStyle(color: Colors.white),
+          ),
+        ],
       ),
-      color: Colors.red,
     );
   }
 
@@ -137,9 +142,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               UserAccountsDrawerHeader(
                 currentAccountPicture: GestureDetector(
                   onTap: () { },
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/avatar.jpg')
-                  ),
+                  child:  _avatar != null ? CircleAvatar(
+                    backgroundImage: NetworkImage('$_avatar')
+                    // backgroundImage: AssetImage('assets/images/avatar.jpg')
+                  ) : CircularProgressIndicator(),
                 ),
                 accountName: Text('$fullnameAccount'), 
                 accountEmail: Text('$empIDAccount'),
@@ -240,6 +246,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 duration: Duration(milliseconds: 300),
                 tabBackgroundColor: Colors.green[800],
+                color: Colors.teal,
                 tabs: [
                   GButton(
                     icon: Icons.home,
@@ -265,6 +272,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 selectedIndex: _currentIndex,
                 onTabChange: (index) {
                   setState(() {
+                    onTabTapped(index);
                     _currentIndex = index;
                   });
                 }),
