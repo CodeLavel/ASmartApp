@@ -112,7 +112,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   // hintText: 'กรุณากรอกรหัสพนักงาน 10 หลัก'
                                 ),
                                 maxLength: 7,
-                                initialValue: '7777777',
+                                // initialValue: '7777777',
                                 validator: (value){
                                   if(value.isEmpty){
                                     return 'กรุณากรอกรหัสพนักงานก่อน';
@@ -140,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   // hintText: 'กรุณากรอกบัตรประชาชน 13 หลัก'
                                 ),
                                 maxLength: 13,
-                                initialValue: '3770400404433',
+                                // initialValue: '3770400404433',
                                 validator: (value){
                                   if(value.isEmpty){
                                     return 'กรุณากรอกเลขบัตรประชาชนก่อน';
